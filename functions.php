@@ -236,22 +236,22 @@ function cassette_brutal_customize_register($wp_customize) {
         'type'        => 'text',
     ));
     
-    // Design Philosophy Section
+    // Good, Better, Best Section
     $wp_customize->add_section('cassette_brutal_philosophy', array(
-        'title'       => esc_html__('Design Philosophy', 'cassette-brutal'),
-        'description' => esc_html__('Customize the design philosophy section.', 'cassette-brutal'),
+        'title'       => esc_html__('Good, Better, Best', 'cassette-brutal'),
+        'description' => esc_html__('Customize the Good, Better, Best section.', 'cassette-brutal'),
         'priority'    => 35,
     ));
     
     // Philosophy Title
     $wp_customize->add_setting('philosophy_title', array(
-        'default'           => 'Design Philosophy',
+        'default'           => 'Good, Better, Best',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'postMessage',
     ));
     
     $wp_customize->add_control('philosophy_title', array(
-        'label'       => esc_html__('Philosophy Section Title', 'cassette-brutal'),
+        'label'       => esc_html__('Good, Better, Best Section Title', 'cassette-brutal'),
         'section'     => 'cassette_brutal_philosophy',
         'type'        => 'text',
     ));
@@ -433,5 +433,27 @@ function cassette_brutal_post_navigation() {
         echo '<div class="post-navigation py-16 border-t border-border">' . cassette_brutal_container($navigation) . '</div>';
     }
 }
+
+/**
+ * Register block patterns for reusable collections.
+ */
+function cassette_brutal_register_patterns() {
+    register_block_pattern_category(
+        'cassette-collections',
+        array(
+            'label' => esc_html__( 'Collections', 'cassette-brutal' ),
+        )
+    );
+
+    register_block_pattern(
+        'cassette-brutal/hero-section',
+        array(
+            'title'      => esc_html__( 'Hero Section', 'cassette-brutal' ),
+            'categories' => array( 'cassette-collections' ),
+            'content'    => file_get_contents( get_template_directory() . '/patterns/hero.php' ),
+        )
+    );
+}
+add_action( 'init', 'cassette_brutal_register_patterns' );
 ?>
 

@@ -29,11 +29,11 @@ get_header(); ?>
             </div>
         </section>
 
-        <!-- Design Philosophy Section -->
+        <!-- Good, Better, Best Section -->
         <section class="py-24">
             <div class="container">
                 <div class="text-center mb-20">
-                    <h2 class="text-headline mb-6 philosophy-title"><?php echo esc_html(get_theme_mod('philosophy_title', __('Design Philosophy', 'cassette-brutal'))); ?></h2>
+                    <h2 class="text-headline mb-6 philosophy-title"><?php echo esc_html(get_theme_mod('philosophy_title', __('Good, Better, Best', 'cassette-brutal'))); ?></h2>
                     <p class="text-body text-muted-foreground max-w-2xl mx-auto philosophy-subtitle">
                         <?php echo esc_html(get_theme_mod('philosophy_subtitle', __('Where Stefan Sagmeister meets Jony Ive — confident, intelligent, and quietly opinionated.', 'cassette-brutal'))); ?>
                     </p>
@@ -162,13 +162,13 @@ get_header(); ?>
             </div>
         </section>
 
-        <!-- Content Block: Feature Highlight -->
+        <!-- Content Block: Call to Action -->
         <section class="py-20 bg-surface-elevated">
             <div class="container">
                 <div class="grid grid-cols-12 gap-12 items-center">
                     <div class="col-span-6">
                         <div class="space-y-6">
-                            <h2 class="text-headline"><?php esc_html_e('Feature Highlight', 'cassette-brutal'); ?></h2>
+                            <h2 class="text-headline"><?php esc_html_e('Call to Action', 'cassette-brutal'); ?></h2>
                             <p class="text-body text-muted-foreground">
                                 <?php esc_html_e('Showcase your key features with this elegant two-column layout.', 'cassette-brutal'); ?>
                                 <?php esc_html_e('Perfect for highlighting product benefits, service offerings, or key differentiators.', 'cassette-brutal'); ?>
@@ -261,7 +261,7 @@ get_header(); ?>
             </div>
         </section>
 
-        <!-- Alternative: Vertical Design Philosophy Cards -->
+        <!-- Alternative: Vertical Good, Better, Best Cards -->
         <section class="py-24 bg-surface-elevated">
             <div class="container">
                 <div class="text-center mb-20">
