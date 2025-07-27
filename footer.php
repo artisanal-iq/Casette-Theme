@@ -1,0 +1,195 @@
+    </main><!-- #main -->
+
+    <footer id="colophon" class="site-footer bg-surface-elevated border-t border-border">
+        <?php if (is_active_sidebar('footer-1')) : ?>
+            <div class="footer-widgets py-16">
+                <div class="container">
+                    <div class="widget-area">
+                        <?php dynamic_sidebar('footer-1'); ?>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+        
+        <div class="footer-bottom py-8 border-t border-border">
+            <div class="container">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div class="site-info text-caption text-muted-foreground">
+                        <p>
+                            &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. 
+                            <?php esc_html_e('Powered by', 'cassette-brutal'); ?> 
+                            <a href="https://wordpress.org/" class="hover:text-accent transition-colors">WordPress</a>
+                            <?php esc_html_e('and', 'cassette-brutal'); ?> 
+                            <a href="#" class="hover:text-accent transition-colors">Cassette Brutal Grid</a>.
+                        </p>
+                    </div>
+                    
+                    <div class="footer-navigation">
+                        <?php if (has_nav_menu('footer')) : ?>
+                            <?php wp_nav_menu(array(
+                                'theme_location' => 'footer',
+                                'menu_id'        => 'footer-menu',
+                                'menu_class'     => 'footer-menu flex items-center space-x-6',
+                                'container'      => false,
+                                'fallback_cb'    => false,
+                            )); ?>
+                        <?php else : ?>
+                            <div class="footer-menu flex items-center space-x-6">
+                                <a href="<?php echo esc_url(home_url('/privacy-policy')); ?>" class="text-caption text-muted-foreground hover:text-accent transition-colors"><?php esc_html_e('Privacy Policy', 'cassette-brutal'); ?></a>
+                                <a href="<?php echo esc_url(home_url('/terms-of-service')); ?>" class="text-caption text-muted-foreground hover:text-accent transition-colors"><?php esc_html_e('Terms of Service', 'cassette-brutal'); ?></a>
+                                <a href="<?php echo esc_url(home_url('/contact')); ?>" class="text-caption text-muted-foreground hover:text-accent transition-colors"><?php esc_html_e('Contact', 'cassette-brutal'); ?></a>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    
+                    <div class="social-links flex items-center space-x-4">
+                        <!-- Add social media links here -->
+                        <a href="#" class="social-link text-muted-foreground hover:text-accent transition-colors" aria-label="<?php esc_attr_e('Twitter', 'cassette-brutal'); ?>">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        
+                        <a href="#" class="social-link text-muted-foreground hover:text-accent transition-colors" aria-label="<?php esc_attr_e('GitHub', 'cassette-brutal'); ?>">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        
+                        <a href="#" class="social-link text-muted-foreground hover:text-accent transition-colors" aria-label="<?php esc_attr_e('LinkedIn', 'cassette-brutal'); ?>">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer><!-- #colophon -->
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-accent text-accent-foreground p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:scale-110 z-40" aria-label="<?php esc_attr_e('Back to Top', 'cassette-brutal'); ?>">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+    
+</div><!-- #page -->
+
+<?php wp_footer(); ?>
+
+<script>
+// Theme JavaScript functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+    
+    // Search overlay toggle
+    const searchToggle = document.querySelector('.search-toggle');
+    const searchOverlay = document.querySelector('.search-overlay');
+    const searchClose = document.querySelector('.search-close');
+    const searchField = document.querySelector('.search-field');
+    
+    if (searchToggle && searchOverlay) {
+        searchToggle.addEventListener('click', function() {
+            searchOverlay.classList.remove('hidden');
+            if (searchField) {
+                setTimeout(() => searchField.focus(), 100);
+            }
+        });
+    }
+    
+    if (searchClose && searchOverlay) {
+        searchClose.addEventListener('click', function() {
+            searchOverlay.classList.add('hidden');
+        });
+        
+        searchOverlay.addEventListener('click', function(e) {
+            if (e.target === searchOverlay) {
+                searchOverlay.classList.add('hidden');
+            }
+        });
+    }
+    
+    // Theme toggle (dark mode)
+    const themeToggle = document.querySelector('.theme-toggle');
+    const sunIcon = document.querySelector('.sun-icon');
+    const moonIcon = document.querySelector('.moon-icon');
+    
+    if (themeToggle) {
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        
+        if (currentTheme === 'dark') {
+            sunIcon?.classList.add('hidden');
+            moonIcon?.classList.remove('hidden');
+        }
+        
+        themeToggle.addEventListener('click', function() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            if (newTheme === 'dark') {
+                sunIcon?.classList.add('hidden');
+                moonIcon?.classList.remove('hidden');
+            } else {
+                sunIcon?.classList.remove('hidden');
+                moonIcon?.classList.add('hidden');
+            }
+        });
+    }
+    
+    // Back to top button
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    if (backToTopButton) {
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
+

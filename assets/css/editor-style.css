@@ -1,0 +1,344 @@
+/**
+ * Editor Styles for Cassette Brutal Grid Theme
+ * Styles for the WordPress Block Editor (Gutenberg)
+ * 
+ * @package CassetteBrutalGrid
+ * @since 1.0.0
+ */
+
+/* Import the main theme styles */
+@import url('../../style.css');
+
+/* Editor-specific overrides */
+.editor-styles-wrapper {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    line-height: 1.6;
+}
+
+/* Block Editor Typography */
+.editor-styles-wrapper h1,
+.editor-styles-wrapper .wp-block-heading h1 {
+    font-size: var(--text-5xl);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: var(--space-6);
+}
+
+.editor-styles-wrapper h2,
+.editor-styles-wrapper .wp-block-heading h2 {
+    font-size: var(--text-3xl);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    margin-bottom: var(--space-4);
+}
+
+.editor-styles-wrapper h3,
+.editor-styles-wrapper .wp-block-heading h3 {
+    font-size: var(--text-xl);
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: var(--space-4);
+}
+
+.editor-styles-wrapper p,
+.editor-styles-wrapper .wp-block-paragraph {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+}
+
+/* Block Editor Specific Blocks */
+.editor-styles-wrapper .wp-block-quote {
+    border-left: 4px solid hsl(var(--accent));
+    padding-left: var(--space-6);
+    margin: var(--space-8) 0;
+    font-style: italic;
+    font-size: var(--text-lg);
+    color: hsl(var(--muted-foreground));
+}
+
+.editor-styles-wrapper .wp-block-quote cite {
+    font-style: normal;
+    font-size: var(--text-sm);
+    color: hsl(var(--muted-foreground));
+    display: block;
+    margin-top: var(--space-2);
+}
+
+.editor-styles-wrapper .wp-block-pullquote {
+    background: hsl(var(--surface-elevated));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    padding: var(--space-8);
+    margin: var(--space-8) 0;
+    text-align: center;
+}
+
+.editor-styles-wrapper .wp-block-pullquote blockquote {
+    font-size: var(--text-2xl);
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Code Blocks */
+.editor-styles-wrapper .wp-block-code {
+    background: hsl(var(--surface-elevated));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    padding: var(--space-4);
+    font-family: 'JetBrains Mono', Monaco, monospace;
+    font-size: var(--text-sm);
+    overflow-x: auto;
+}
+
+.editor-styles-wrapper .wp-block-preformatted {
+    background: hsl(var(--surface-elevated));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    padding: var(--space-4);
+    font-family: 'JetBrains Mono', Monaco, monospace;
+    font-size: var(--text-sm);
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
+/* Lists */
+.editor-styles-wrapper .wp-block-list {
+    padding-left: var(--space-6);
+    margin-bottom: var(--space-4);
+}
+
+.editor-styles-wrapper .wp-block-list li {
+    margin-bottom: var(--space-2);
+}
+
+/* Images */
+.editor-styles-wrapper .wp-block-image {
+    margin-bottom: var(--space-6);
+}
+
+.editor-styles-wrapper .wp-block-image img {
+    border-radius: var(--radius);
+    max-width: 100%;
+    height: auto;
+}
+
+.editor-styles-wrapper .wp-block-image figcaption {
+    font-size: var(--text-sm);
+    color: hsl(var(--muted-foreground));
+    text-align: center;
+    margin-top: var(--space-2);
+    font-style: italic;
+}
+
+/* Gallery */
+.editor-styles-wrapper .wp-block-gallery {
+    margin-bottom: var(--space-8);
+}
+
+.editor-styles-wrapper .wp-block-gallery .wp-block-image {
+    margin-bottom: 0;
+}
+
+/* Buttons */
+.editor-styles-wrapper .wp-block-button .wp-block-button__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    border: none;
+    font-size: var(--text-base);
+}
+
+.editor-styles-wrapper .wp-block-button.is-style-fill .wp-block-button__link {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+}
+
+.editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link {
+    background-color: transparent;
+    color: hsl(var(--primary));
+    border: 1px solid hsl(var(--border));
+}
+
+/* Separators */
+.editor-styles-wrapper .wp-block-separator {
+    border: none;
+    border-top: 1px solid hsl(var(--border));
+    margin: var(--space-8) 0;
+}
+
+.editor-styles-wrapper .wp-block-separator.is-style-wide {
+    border-top: 2px solid hsl(var(--border));
+}
+
+.editor-styles-wrapper .wp-block-separator.is-style-dots {
+    border: none;
+    text-align: center;
+    line-height: 1;
+    height: auto;
+}
+
+.editor-styles-wrapper .wp-block-separator.is-style-dots::before {
+    content: '···';
+    color: hsl(var(--muted-foreground));
+    font-size: var(--text-2xl);
+    letter-spacing: var(--space-2);
+}
+
+/* Tables */
+.editor-styles-wrapper .wp-block-table {
+    margin-bottom: var(--space-8);
+}
+
+.editor-styles-wrapper .wp-block-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.editor-styles-wrapper .wp-block-table th,
+.editor-styles-wrapper .wp-block-table td {
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid hsl(var(--border));
+    text-align: left;
+}
+
+.editor-styles-wrapper .wp-block-table th {
+    background-color: hsl(var(--surface-elevated));
+    font-weight: 600;
+}
+
+.editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+    background-color: hsl(var(--surface-elevated));
+}
+
+/* Columns */
+.editor-styles-wrapper .wp-block-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-8);
+    margin-bottom: var(--space-8);
+}
+
+.editor-styles-wrapper .wp-block-column {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Group */
+.editor-styles-wrapper .wp-block-group {
+    margin-bottom: var(--space-8);
+}
+
+.editor-styles-wrapper .wp-block-group.has-background {
+    padding: var(--space-6);
+    border-radius: var(--radius);
+}
+
+/* Cover */
+.editor-styles-wrapper .wp-block-cover {
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-8);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.editor-styles-wrapper .wp-block-cover__inner-container {
+    width: 100%;
+    z-index: 1;
+    color: white;
+    text-align: center;
+}
+
+/* Media & Text */
+.editor-styles-wrapper .wp-block-media-text {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "media text";
+    gap: var(--space-8);
+    align-items: center;
+    margin-bottom: var(--space-8);
+}
+
+.editor-styles-wrapper .wp-block-media-text.has-media-on-the-right {
+    grid-template-areas: "text media";
+}
+
+.editor-styles-wrapper .wp-block-media-text__media {
+    grid-area: media;
+}
+
+.editor-styles-wrapper .wp-block-media-text__content {
+    grid-area: text;
+    padding: var(--space-4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .editor-styles-wrapper .wp-block-columns {
+        flex-direction: column;
+    }
+    
+    .editor-styles-wrapper .wp-block-media-text {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "media"
+            "text";
+    }
+    
+    .editor-styles-wrapper .wp-block-media-text.has-media-on-the-right {
+        grid-template-areas: 
+            "media"
+            "text";
+    }
+}
+
+/* Color Palette Classes */
+.editor-styles-wrapper .has-primary-color {
+    color: hsl(var(--primary)) !important;
+}
+
+.editor-styles-wrapper .has-primary-background-color {
+    background-color: hsl(var(--primary)) !important;
+}
+
+.editor-styles-wrapper .has-accent-color {
+    color: hsl(var(--accent)) !important;
+}
+
+.editor-styles-wrapper .has-accent-background-color {
+    background-color: hsl(var(--accent)) !important;
+}
+
+.editor-styles-wrapper .has-surface-color {
+    color: hsl(var(--surface)) !important;
+}
+
+.editor-styles-wrapper .has-surface-background-color {
+    background-color: hsl(var(--surface)) !important;
+}
+
+.editor-styles-wrapper .has-muted-color {
+    color: hsl(var(--muted-foreground)) !important;
+}
+
+.editor-styles-wrapper .has-muted-background-color {
+    background-color: hsl(var(--muted)) !important;
+}
+

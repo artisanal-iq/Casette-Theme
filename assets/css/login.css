@@ -1,0 +1,317 @@
+/**
+ * WordPress Login Page Styles for Cassette Brutal Grid Theme
+ * 
+ * @package CassetteBrutalGrid
+ * @since 1.0.0
+ */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* CSS Custom Properties */
+:root {
+    --background: 0 0% 99%;
+    --foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    --surface: 0 0% 100%;
+    --surface-elevated: 240 4.8% 95.9%;
+    --border: 240 5.9% 90%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --gradient-subtle: linear-gradient(180deg, hsl(240 4.8% 99%) 0%, hsl(240 4.8% 96%) 100%);
+    --shadow-elegant: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --radius: 8px;
+    --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Body Styles */
+body.login {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--gradient-subtle);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Login Container */
+#login {
+    width: 100%;
+    max-width: 400px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* Logo Styles */
+#login h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#login h1 a {
+    background-image: none !important;
+    width: auto !important;
+    height: auto !important;
+    font-size: 2rem;
+    font-weight: 700;
+    color: hsl(var(--primary));
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    line-height: 1.2;
+    transition: color var(--transition-normal);
+}
+
+#login h1 a:hover,
+#login h1 a:focus {
+    color: hsl(var(--accent));
+}
+
+/* Login Form */
+#loginform,
+#registerform,
+#lostpasswordform {
+    background: hsl(var(--surface));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-elegant);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Form Labels */
+#loginform label,
+#registerform label,
+#lostpasswordform label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: hsl(var(--foreground));
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Form Inputs */
+#loginform input[type="text"],
+#loginform input[type="password"],
+#loginform input[type="email"],
+#registerform input[type="text"],
+#registerform input[type="password"],
+#registerform input[type="email"],
+#lostpasswordform input[type="text"],
+#lostpasswordform input[type="email"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    background: hsl(var(--surface));
+    color: hsl(var(--foreground));
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all var(--transition-normal);
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+#loginform input[type="text"]:focus,
+#loginform input[type="password"]:focus,
+#loginform input[type="email"]:focus,
+#registerform input[type="text"]:focus,
+#registerform input[type="password"]:focus,
+#registerform input[type="email"]:focus,
+#lostpasswordform input[type="text"]:focus,
+#lostpasswordform input[type="email"]:focus {
+    outline: none;
+    border-color: hsl(var(--accent));
+    box-shadow: 0 0 0 2px hsl(var(--accent) / 0.2);
+}
+
+/* Submit Buttons */
+#wp-submit,
+#registerform input[type="submit"],
+#lostpasswordform input[type="submit"] {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+#wp-submit:hover,
+#wp-submit:focus,
+#registerform input[type="submit"]:hover,
+#registerform input[type="submit"]:focus,
+#lostpasswordform input[type="submit"]:hover,
+#lostpasswordform input[type="submit"]:focus {
+    background: hsl(var(--accent));
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-elegant);
+}
+
+/* Remember Me Checkbox */
+.forgetmenot {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.forgetmenot input[type="checkbox"] {
+    width: auto !important;
+    margin: 0 !important;
+    accent-color: hsl(var(--accent));
+}
+
+.forgetmenot label {
+    margin: 0 !important;
+    font-size: 0.875rem;
+    color: hsl(var(--muted-foreground));
+}
+
+/* Links */
+#nav,
+#backtoblog {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+#nav a,
+#backtoblog a {
+    color: hsl(var(--muted-foreground));
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color var(--transition-normal);
+}
+
+#nav a:hover,
+#nav a:focus,
+#backtoblog a:hover,
+#backtoblog a:focus {
+    color: hsl(var(--accent));
+}
+
+/* Error Messages */
+#login_error,
+.message {
+    background: hsl(var(--surface-elevated));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+}
+
+#login_error {
+    border-left: 4px solid #dc2626;
+    color: #dc2626;
+}
+
+.message {
+    border-left: 4px solid hsl(var(--accent));
+    color: hsl(var(--accent));
+}
+
+/* Privacy Policy Link */
+.privacy-policy-page-link {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.privacy-policy-page-link a {
+    color: hsl(var(--muted-foreground));
+    text-decoration: none;
+    font-size: 0.75rem;
+    transition: color var(--transition-normal);
+}
+
+.privacy-policy-page-link a:hover,
+.privacy-policy-page-link a:focus {
+    color: hsl(var(--accent));
+}
+
+/* Language Switcher */
+.language-switcher {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.language-switcher select {
+    padding: 0.5rem;
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    background: hsl(var(--surface));
+    color: hsl(var(--foreground));
+    font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    body.login {
+        padding: 1rem;
+    }
+    
+    #login {
+        max-width: 100%;
+    }
+    
+    #loginform,
+    #registerform,
+    #lostpasswordform {
+        padding: 1.5rem;
+    }
+    
+    #login h1 a {
+        font-size: 1.5rem;
+    }
+}
+
+/* Loading State */
+.wp-core-ui .button.loading::after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Focus Styles for Accessibility */
+*:focus-visible {
+    outline: 2px solid hsl(var(--accent));
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    :root {
+        --border: 240 10% 20%;
+        --muted-foreground: 240 10% 20%;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+

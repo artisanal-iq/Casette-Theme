@@ -1,0 +1,742 @@
+/*
+Theme Name: Cassette Brutal Grid
+Description: A WordPress theme inspired by Cassette Modernism × Pixelated Brutalism design philosophy
+Version: 1.0.0
+Author: Cassette Design System
+*/
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+/* CSS Custom Properties - Design System */
+:root {
+    /* Colors */
+    --background: 0 0% 99%;
+    --foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    --surface: 0 0% 100%;
+    --surface-elevated: 240 4.8% 95.9%;
+    --border: 240 5.9% 90%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --grid-line: 240 4.8% 90%;
+    
+    /* Dynamic accent color from customizer */
+    --accent-hex: #3B82F6;
+    
+    /* Typography Scale - Much Smaller Sizes */
+    --text-hero: 2.5rem;        /* 40px - Much smaller hero text */
+    --text-headline: 1.5rem;    /* 24px - Much smaller headlines */
+    --text-subhead: 1.125rem;   /* 18px - Smaller subheadings */
+    --text-body: 0.875rem;      /* 14px - Smaller body text */
+    --text-caption: 0.75rem;    /* 12px - Smaller caption text */
+    --text-mono: 0.75rem;       /* 12px - Smaller monospace text */
+    
+    /* Spacing Scale */
+    --space-1: 0.25rem;   /* 4px */
+    --space-2: 0.5rem;    /* 8px */
+    --space-3: 0.75rem;   /* 12px */
+    --space-4: 1rem;      /* 16px */
+    --space-5: 1.25rem;   /* 20px */
+    --space-6: 1.5rem;    /* 24px */
+    --space-8: 2rem;      /* 32px */
+    --space-10: 2.5rem;   /* 40px */
+    --space-12: 3rem;     /* 48px */
+    --space-16: 4rem;     /* 64px */
+    --space-20: 5rem;     /* 80px */
+    --space-24: 6rem;     /* 96px */
+    --space-32: 8rem;     /* 128px */
+    
+    /* Layout */
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+    --container-2xl: 1536px;
+    
+    /* Effects */
+    --radius: 8px;
+    --radius-lg: 12px;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-elegant: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-brutal: 8px 8px 0px 0px hsl(var(--primary));
+    --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --gradient-subtle: linear-gradient(180deg, hsl(240 4.8% 99%) 0%, hsl(240 4.8% 96%) 100%);
+}
+
+/* Dark Mode Support */
+[data-theme="dark"] {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --surface: 240 5.9% 10%;
+    --surface-elevated: 240 3.7% 15.9%;
+    --border: 240 3.7% 15.9%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    font-size: var(--text-body);
+}
+
+/* Typography Classes */
+.text-hero {
+    font-size: var(--text-hero);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.text-headline {
+    font-size: var(--text-headline);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+.text-subhead {
+    font-size: var(--text-subhead);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.text-body {
+    font-size: var(--text-body);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.text-caption {
+    font-size: var(--text-caption);
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.text-mono {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: var(--text-mono);
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+/* Color Classes */
+.text-accent {
+    color: hsl(var(--accent)) !important;
+}
+
+.text-foreground {
+    color: hsl(var(--foreground));
+}
+
+.text-muted-foreground {
+    color: hsl(var(--muted-foreground));
+}
+
+.text-primary {
+    color: hsl(var(--primary));
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--space-4);
+    }
+}
+
+/* Grid System */
+.grid {
+    display: grid;
+}
+
+.grid-cols-12 {
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.col-span-6 {
+    grid-column: span 6;
+}
+
+.col-span-4 {
+    grid-column: span 4;
+}
+
+.col-span-8 {
+    grid-column: span 8;
+}
+
+.gap-12 {
+    gap: 3rem;
+}
+
+.gap-8 {
+    gap: 2rem;
+}
+
+.gap-6 {
+    gap: 1.5rem;
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+.gap-3 {
+    gap: 0.75rem;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}
+
+/* Typography Section Specific Styles */
+.typography-section .grid-cols-12 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 3rem !important;
+}
+
+.typography-section .col-span-6 {
+    grid-column: span 1 !important;
+}
+
+.typography-section .card {
+    min-height: 400px;
+}
+
+/* Layout Classes */
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.max-w-4xl {
+    max-width: 56rem;
+}
+
+.max-w-2xl {
+    max-width: 42rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Spacing Classes */
+.mb-8 { margin-bottom: 2rem; }
+.mb-12 { margin-bottom: 3rem; }
+.mb-16 { margin-bottom: 4rem; }
+.mb-20 { margin-bottom: 5rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+
+.py-32 { padding-top: 8rem; padding-bottom: 8rem; }
+.py-24 { padding-top: 6rem; padding-bottom: 6rem; }
+.py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+.py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+
+.p-4 { padding: 1rem; }
+
+.space-y-8 > * + * { margin-top: 2rem; }
+.space-y-6 > * + * { margin-top: 1.5rem; }
+.space-y-4 > * + * { margin-top: 1rem; }
+.space-y-3 > * + * { margin-top: 0.75rem; }
+.space-y-2 > * + * { margin-top: 0.5rem; }
+
+/* Background Classes */
+.bg-background {
+    background-color: hsl(var(--background));
+}
+
+.bg-surface {
+    background-color: hsl(var(--surface));
+}
+
+.bg-surface-elevated {
+    background-color: hsl(var(--surface-elevated));
+}
+
+.bg-accent {
+    background-color: hsl(var(--accent));
+}
+
+.bg-muted {
+    background-color: hsl(var(--muted));
+}
+
+.bg-primary {
+    background-color: hsl(var(--primary));
+}
+
+.bg-transparent {
+    background-color: transparent;
+}
+
+/* Gradient Classes */
+.gradient-subtle {
+    background: var(--gradient-subtle);
+}
+
+/* Border Classes */
+.border {
+    border: 1px solid hsl(var(--border));
+}
+
+.border-border {
+    border-color: hsl(var(--border));
+}
+
+.rounded-md {
+    border-radius: var(--radius);
+}
+
+.rounded-lg {
+    border-radius: var(--radius-lg);
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+/* Card Components */
+.card {
+    background-color: hsl(var(--surface));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    transition: var(--transition-normal);
+}
+
+.card-elevated {
+    box-shadow: var(--shadow-elegant);
+    background-color: hsl(var(--surface));
+}
+
+.card-brutal {
+    border: 2px solid hsl(var(--primary));
+    box-shadow: var(--shadow-brutal);
+    background-color: hsl(var(--surface));
+}
+
+.card-minimal {
+    border: 1px solid hsl(var(--border));
+    background-color: hsl(var(--surface));
+}
+
+/* Button Components */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius);
+    font-weight: 500;
+    font-size: var(--text-body);
+    text-decoration: none;
+    transition: var(--transition-normal);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-lg {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--text-subhead);
+}
+
+.btn-primary {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+}
+
+.btn-primary:hover {
+    background-color: hsl(var(--primary) / 0.9);
+    transform: translateY(-1px);
+}
+
+.btn-brutal {
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+    border: 2px solid hsl(var(--primary));
+}
+
+.btn-brutal:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px hsl(var(--primary));
+}
+
+/* Header Styles */
+.site-header {
+    background-color: hsl(var(--surface));
+    border-bottom: 1px solid hsl(var(--border));
+    padding: var(--space-4) 0;
+}
+
+.site-header.hidden {
+    display: none;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    font-size: var(--text-subhead);
+    font-weight: 700;
+    color: hsl(var(--foreground));
+    text-decoration: none;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--space-6);
+}
+
+.main-nav a {
+    color: hsl(var(--foreground));
+    text-decoration: none;
+    font-size: var(--text-body);
+    transition: var(--transition-normal);
+}
+
+.main-nav a:hover {
+    color: hsl(var(--accent));
+}
+
+/* Mobile Menu */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-2);
+}
+
+.mobile-menu {
+    display: none;
+}
+
+/* Animations */
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.6s ease-out 0.2s both;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.6s ease-out 0.4s both;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Content Block Styles */
+.interactive {
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive:hover {
+    transform: translateY(-2px);
+}
+
+/* Stripe Bars for Vertical Cards */
+.stripe-bars {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-end;
+}
+
+.stripe-bar {
+    height: 100%;
+    width: 1rem;
+    border-radius: 0.25rem;
+}
+
+.stripe-bars .stripe-bar:nth-child(1) { height: 100%; }
+.stripe-bars .stripe-bar:nth-child(2) { height: 75%; }
+.stripe-bars .stripe-bar:nth-child(3) { height: 50%; }
+
+/* Accent Bars for Vertical Cards */
+.accent-bars {
+    display: flex;
+    gap: 0.25rem;
+    align-items: flex-end;
+    height: 3rem;
+}
+
+.accent-bar {
+    width: 0.5rem;
+    border-radius: 0.125rem;
+}
+
+.accent-bars .accent-bar:nth-child(1) { height: 60%; }
+.accent-bars .accent-bar:nth-child(2) { height: 40%; }
+.accent-bars .accent-bar:nth-child(3) { height: 80%; }
+.accent-bars .accent-bar:nth-child(4) { height: 100%; }
+.accent-bars .accent-bar:nth-child(5) { height: 30%; }
+
+/* Enhanced Card Hover Effects */
+.card.interactive:hover {
+    transform: translateY(-4px);
+}
+
+.card-brutal.interactive:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 4px 4px 0px 0px hsl(var(--primary));
+}
+
+/* Utility Classes */
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.h-24 {
+    height: 6rem;
+}
+
+.h-16 {
+    height: 4rem;
+}
+
+.h-12 {
+    height: 3rem;
+}
+
+.h-10 {
+    height: 2.5rem;
+}
+
+.h-3 {
+    height: 0.75rem;
+}
+
+.h-2 {
+    height: 0.5rem;
+}
+
+.w-12 {
+    width: 3rem;
+}
+
+.w-10 {
+    width: 2.5rem;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.opacity-80 {
+    opacity: 0.8;
+}
+
+.opacity-60 {
+    opacity: 0.6;
+}
+
+.opacity-30 {
+    opacity: 0.3;
+}
+
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+.transition-colors {
+    transition: color 0.3s ease;
+}
+
+.transition-transform {
+    transition: transform 0.3s ease;
+}
+
+.duration-300 {
+    transition-duration: 300ms;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.block {
+    display: block;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid-cols-12 .col-span-6 {
+        grid-column: span 12;
+    }
+    
+    .grid-cols-12 .col-span-8 {
+        grid-column: span 12;
+    }
+    
+    .grid-cols-12 .col-span-4 {
+        grid-column: span 12;
+    }
+    
+    .grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .grid-cols-3 {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .flex.gap-4 {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .flex.gap-6 {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .stripe-bars,
+    .accent-bars {
+        justify-content: center;
+        margin: 1rem 0;
+    }
+    
+    /* Typography section mobile fixes */
+    .typography-section .grid-cols-12 {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    .typography-section .col-span-6 {
+        grid-column: span 1 !important;
+    }
+    
+    .main-nav {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .py-32 {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    
+    .py-24 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    .py-20 {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+}
+
+/* Focus States for Accessibility */
+.interactive:focus,
+.btn:focus {
+    outline: 2px solid hsl(var(--accent));
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    .interactive,
+    .btn {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+    
+    .card {
+        break-inside: avoid;
+    }
+}
+
