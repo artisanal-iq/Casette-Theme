@@ -329,5 +329,109 @@ add_action('customize_preview_init', 'cassette_brutal_customize_preview_js');
  * Remove WordPress Version from Head
  */
 remove_action('wp_head', 'wp_generator');
+
+/**
+ * Output a styled button element.
+ *
+ * @param string $text       Button text.
+ * @param string $variant    Variant slug (primary, secondary, brutal, minimal, etc).
+ * @param string $size       Size slug (sm, md, lg).
+ * @param string $classes    Additional classes.
+ * @param array  $attributes Extra attributes for the anchor tag.
+ * @return string            Button markup.
+ */
+function cassette_brutal_button($text, $variant = 'primary', $size = 'md', $classes = '', $attributes = array()) {
+    $allowed_variants = array('primary', 'secondary', 'ghost', 'brutal', 'minimal');
+    $allowed_sizes    = array('sm', 'md', 'lg');
+
+    $variant = in_array($variant, $allowed_variants, true) ? $variant : 'primary';
+    $size    = in_array($size, $allowed_sizes, true) ? $size : 'md';
+
+    $attr_string = '';
+    foreach ($attributes as $key => $value) {
+        $attr_string .= ' ' . sanitize_key($key) . '="' . esc_attr($value) . '"';
+    }
+
+    $class_string = trim('btn btn-' . $variant . ' btn-' . $size . ' ' . $classes);
+
+    return '<a class="' . esc_attr($class_string) . '"' . $attr_string . '>' . esc_html($text) . '</a>';
+}
+
+/**
+ * Output a card component wrapper.
+ *
+ * @param string $content     Card content HTML.
+ * @param string $variant     Card variant (default, elevated, brutal, minimal).
+ * @param bool   $interactive Whether to apply the interactive class.
+ * @param string $classes     Additional classes.
+ * @return string             Markup for the card.
+ */
+function cassette_brutal_card($content, $variant = 'default', $interactive = false, $classes = '') {
+    $allowed_variants = array('default', 'elevated', 'brutal', 'minimal');
+    $variant          = in_array($variant, $allowed_variants, true) ? $variant : 'default';
+
+    $class_string  = 'card';
+    if ('default' !== $variant) {
+        $class_string .= ' card-' . $variant;
+    }
+
+    if ($interactive) {
+        $class_string .= ' interactive';
+    }
+
+    if (!empty($classes)) {
+        $class_string .= ' ' . $classes;
+    }
+
+    return '<div class="' . esc_attr(trim($class_string)) . '">' . wp_kses_post($content) . '</div>';
+}
+
+/**
+ * Wrap content in a responsive container.
+ *
+ * @param string $content Container inner HTML.
+ * @param string $size    Optional size modifier class.
+ * @param string $classes Additional classes.
+ * @return string         Markup for the container.
+ */
+function cassette_brutal_container($content, $size = '', $classes = '') {
+    $size_class   = $size && 'default' !== $size ? ' max-w-' . sanitize_html_class($size) : '';
+    $class_string = trim('container' . $size_class . ' ' . $classes);
+
+    return '<div class="' . esc_attr($class_string) . '">' . wp_kses_post($content) . '</div>';
+}
+
+/**
+ * Output a grid wrapper.
+ *
+ * @param string $content  Grid content HTML.
+ * @param int    $cols     Number of columns.
+ * @param string $gap      Gap size slug.
+ * @param string $classes  Additional classes.
+ * @return string          Markup for the grid.
+ */
+function cassette_brutal_grid($content, $cols = 12, $gap = '4', $classes = '') {
+    $cols_class = 'grid-cols-' . absint($cols);
+    $gap_class  = $gap ? 'gap-' . sanitize_html_class($gap) : '';
+    $class_string = trim('grid ' . $cols_class . ' ' . $gap_class . ' ' . $classes);
+
+    return '<div class="' . esc_attr($class_string) . '">' . wp_kses_post($content) . '</div>';
+}
+
+/**
+ * Display next/previous post links wrapped in theme markup.
+ */
+function cassette_brutal_post_navigation() {
+    ob_start();
+    the_post_navigation(array(
+        'next_text' => '<span class="sr-only">' . esc_html__('Next post:', 'cassette-brutal') . '</span><span aria-hidden="true">%title →</span>',
+        'prev_text' => '<span class="sr-only">' . esc_html__('Previous post:', 'cassette-brutal') . '</span><span aria-hidden="true">← %title</span>',
+    ));
+    $navigation = ob_get_clean();
+
+    if ($navigation) {
+        echo '<div class="post-navigation py-16 border-t border-border">' . cassette_brutal_container($navigation) . '</div>';
+    }
+}
 ?>
 
