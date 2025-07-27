@@ -15,15 +15,15 @@ get_header(); ?>
             <div class="container">
                 <div class="text-center max-w-4xl mx-auto">
                     <h1 class="text-hero mb-8 animate-fade-in hero-title">
-                        <span class="hero-title-main"><?php echo esc_html(get_theme_mod('hero_title', 'Design that')); ?></span><br>
-                        <span class="text-accent hero-title-accent"><?php echo esc_html(get_theme_mod('hero_title_accent', 'speaks first')); ?></span>
+                        <span class="hero-title-main"><?php echo esc_html(get_theme_mod('hero_title', __('Design that', 'cassette-brutal'))); ?></span><br>
+                        <span class="text-accent hero-title-accent"><?php echo esc_html(get_theme_mod('hero_title_accent', __('speaks first', 'cassette-brutal'))); ?></span>
                     </h1>
                     <p class="text-subhead text-muted-foreground mb-12 animate-slide-up hero-subtitle">
-                        <?php echo esc_html(get_theme_mod('hero_subtitle', 'Clean, bright, open — with just the right hint of playful provocation. Where grid meets grace, and structure finds its subtle rebellion.')); ?>
+                        <?php echo esc_html(get_theme_mod('hero_subtitle', __('Clean, bright, open — with just the right hint of playful provocation. Where grid meets grace, and structure finds its subtle rebellion.', 'cassette-brutal'))); ?>
                     </p>
                     <div class="flex gap-6 justify-center items-center animate-scale-in">
-                        <a href="#" class="btn btn-primary btn-lg hero-button-primary"><?php echo esc_html(get_theme_mod('hero_button_primary', 'Start Creating')); ?></a>
-                        <a href="#" class="btn btn-brutal btn-lg hero-button-secondary"><?php echo esc_html(get_theme_mod('hero_button_secondary', 'Explore Design')); ?></a>
+                        <a href="#" class="btn btn-primary btn-lg hero-button-primary"><?php echo esc_html(get_theme_mod('hero_button_primary', __('Start Creating', 'cassette-brutal'))); ?></a>
+                        <a href="#" class="btn btn-brutal btn-lg hero-button-secondary"><?php echo esc_html(get_theme_mod('hero_button_secondary', __('Explore Design', 'cassette-brutal'))); ?></a>
                     </div>
                 </div>
             </div>
@@ -33,9 +33,9 @@ get_header(); ?>
         <section class="py-24">
             <div class="container">
                 <div class="text-center mb-20">
-                    <h2 class="text-headline mb-6 philosophy-title"><?php echo esc_html(get_theme_mod('philosophy_title', 'Design Philosophy')); ?></h2>
+                    <h2 class="text-headline mb-6 philosophy-title"><?php echo esc_html(get_theme_mod('philosophy_title', __('Design Philosophy', 'cassette-brutal'))); ?></h2>
                     <p class="text-body text-muted-foreground max-w-2xl mx-auto philosophy-subtitle">
-                        <?php echo esc_html(get_theme_mod('philosophy_subtitle', 'Where Stefan Sagmeister meets Jony Ive — confident, intelligent, and quietly opinionated.')); ?>
+                        <?php echo esc_html(get_theme_mod('philosophy_subtitle', __('Where Stefan Sagmeister meets Jony Ive — confident, intelligent, and quietly opinionated.', 'cassette-brutal'))); ?>
                     </p>
                 </div>
                 
@@ -43,11 +43,11 @@ get_header(); ?>
                     <!-- Apple Precision Card -->
                     <div class="card card-elevated">
                         <div class="pb-6 border-b border-border mb-6">
-                            <h3 class="text-headline font-semibold">Apple Precision</h3>
+                            <h3 class="text-headline font-semibold"><?php esc_html_e('Apple Precision', 'cassette-brutal'); ?></h3>
                         </div>
                         <div class="text-body mb-6">
                             <p class="text-body text-muted-foreground mb-6">
-                                Clean lines, thoughtful spacing, and intuitive hierarchy that guides without directing.
+                                <?php esc_html_e('Clean lines, thoughtful spacing, and intuitive hierarchy that guides without directing.', 'cassette-brutal'); ?>
                             </p>
                             <div class="gradient-bar"></div>
                         </div>
@@ -56,11 +56,11 @@ get_header(); ?>
                     <!-- Stripe Elegance Card -->
                     <div class="card card-brutal">
                         <div class="pb-6 border-b border-border mb-6">
-                            <h3 class="text-headline font-semibold">Stripe Elegance</h3>
+                            <h3 class="text-headline font-semibold"><?php esc_html_e('Stripe Elegance', 'cassette-brutal'); ?></h3>
                         </div>
                         <div class="text-body mb-6">
                             <p class="text-body text-muted-foreground mb-6">
-                                Functional minimalism with subtle gradients that feel both tactile and digital.
+                                <?php esc_html_e('Functional minimalism with subtle gradients that feel both tactile and digital.', 'cassette-brutal'); ?>
                             </p>
                             <div class="stripe-bars">
                                 <div class="stripe-bar"></div>
@@ -73,11 +73,11 @@ get_header(); ?>
                     <!-- Sagmeister Spirit Card -->
                     <div class="card card-minimal">
                         <div class="pb-6 border-b border-border mb-6">
-                            <h3 class="text-headline font-semibold">Sagmeister Spirit</h3>
+                            <h3 class="text-headline font-semibold"><?php esc_html_e('Sagmeister Spirit', 'cassette-brutal'); ?></h3>
                         </div>
                         <div class="text-body mb-6">
                             <p class="text-body text-muted-foreground mb-6">
-                                Bold where it counts, whisper elsewhere — editorial meets functional with a hint of rebellion.
+                                <?php esc_html_e('Bold where it counts, whisper elsewhere — editorial meets functional with a hint of rebellion.', 'cassette-brutal'); ?>
                             </p>
                             <div class="accent-bars items-end">
                                 <div class="accent-bar"></div>
@@ -96,17 +96,17 @@ get_header(); ?>
         <section class="py-20 bg-surface-elevated">
             <div class="container">
                 <div class="text-center mb-16">
-                    <h2 class="text-headline mb-6">Purposeful Interactions</h2>
+                    <h2 class="text-headline mb-6"><?php esc_html_e('Purposeful Interactions', 'cassette-brutal'); ?></h2>
                     <p class="text-body text-muted-foreground">
-                        Microinteractions that guide rather than distract
+                        <?php esc_html_e('Microinteractions that guide rather than distract', 'cassette-brutal'); ?>
                     </p>
                 </div>
                 
                 <div class="flex gap-6 justify-center items-center flex-wrap">
-                    <button class="btn btn-primary hover:scale-105 transition-all">Hover Me</button>
-                    <button class="btn btn-primary bg-surface text-foreground border border-border hover:shadow-lg transition-all">Elegant Shadow</button>
-                    <button class="btn btn-brutal">Pixel Perfect</button>
-                    <button class="btn bg-transparent text-muted-foreground hover:text-foreground underline-offset-4 hover:underline transition-colors">Whisper Quiet</button>
+                    <button class="btn btn-primary hover:scale-105 transition-all"><?php esc_html_e('Hover Me', 'cassette-brutal'); ?></button>
+                    <button class="btn btn-primary bg-surface text-foreground border border-border hover:shadow-lg transition-all"><?php esc_html_e('Elegant Shadow', 'cassette-brutal'); ?></button>
+                    <button class="btn btn-brutal"><?php esc_html_e('Pixel Perfect', 'cassette-brutal'); ?></button>
+                    <button class="btn bg-transparent text-muted-foreground hover:text-foreground underline-offset-4 hover:underline transition-colors"><?php esc_html_e('Whisper Quiet', 'cassette-brutal'); ?></button>
                 </div>
             </div>
         </section>
@@ -117,16 +117,16 @@ get_header(); ?>
                 <div class="grid grid-cols-12 gap-12">
                     <div class="col-span-6">
                         <div class="space-y-8">
-                            <h3 class="text-hero typography-title"><?php echo esc_html(get_theme_mod('typography_title', 'Typography Scale')); ?></h3>
-                            <h4 class="text-headline">Bold where it counts</h4>
-                            <p class="text-subhead">Confident and clear</p>
+                            <h3 class="text-hero typography-title"><?php echo esc_html(get_theme_mod('typography_title', __('Typography Scale', 'cassette-brutal'))); ?></h3>
+                            <h4 class="text-headline"><?php esc_html_e('Bold where it counts', 'cassette-brutal'); ?></h4>
+                            <p class="text-subhead"><?php esc_html_e('Confident and clear', 'cassette-brutal'); ?></p>
                             <p class="text-body">
-                                The overall experience should feel like using a next-gen design tool — 
-                                confident, intelligent, and quietly opinionated.
+                                <?php esc_html_e('The overall experience should feel like using a next-gen design tool —', 'cassette-brutal'); ?>
+                                <?php esc_html_e('confident, intelligent, and quietly opinionated.', 'cassette-brutal'); ?>
                             </p>
                             <p class="text-caption text-muted-foreground">
-                                This is for a creative who wants their work to speak first, 
-                                with design that supports, not shouts.
+                                <?php esc_html_e('This is for a creative who wants their work to speak first,', 'cassette-brutal'); ?>
+                                <?php esc_html_e('with design that supports, not shouts.', 'cassette-brutal'); ?>
                             </p>
                             <code class="text-mono block bg-surface-elevated p-4 rounded-md">
                                 font-family: Inter, system-ui, sans-serif;
@@ -168,14 +168,14 @@ get_header(); ?>
                 <div class="grid grid-cols-12 gap-12 items-center">
                     <div class="col-span-6">
                         <div class="space-y-6">
-                            <h2 class="text-headline">Feature Highlight</h2>
+                            <h2 class="text-headline"><?php esc_html_e('Feature Highlight', 'cassette-brutal'); ?></h2>
                             <p class="text-body text-muted-foreground">
-                                Showcase your key features with this elegant two-column layout. 
-                                Perfect for highlighting product benefits, service offerings, or key differentiators.
+                                <?php esc_html_e('Showcase your key features with this elegant two-column layout.', 'cassette-brutal'); ?>
+                                <?php esc_html_e('Perfect for highlighting product benefits, service offerings, or key differentiators.', 'cassette-brutal'); ?>
                             </p>
                             <div class="flex gap-4">
-                                <a href="#" class="btn btn-primary">Learn More</a>
-                                <a href="#" class="btn bg-transparent text-foreground border border-border hover:bg-surface transition-all">View Demo</a>
+                                <a href="#" class="btn btn-primary"><?php esc_html_e('Learn More', 'cassette-brutal'); ?></a>
+                                <a href="#" class="btn bg-transparent text-foreground border border-border hover:bg-surface transition-all"><?php esc_html_e('View Demo', 'cassette-brutal'); ?></a>
                             </div>
                         </div>
                     </div>
@@ -183,9 +183,9 @@ get_header(); ?>
                         <div class="card card-elevated">
                             <div class="space-y-4">
                                 <div class="h-32 bg-gradient-to-br from-accent/20 to-primary/20 rounded-lg"></div>
-                                <h3 class="text-subhead font-semibold">Visual Content</h3>
+                                <h3 class="text-subhead font-semibold"><?php esc_html_e('Visual Content', 'cassette-brutal'); ?></h3>
                                 <p class="text-body text-muted-foreground">
-                                    Add images, videos, or interactive content to make your message more engaging.
+                                    <?php esc_html_e('Add images, videos, or interactive content to make your message more engaging.', 'cassette-brutal'); ?>
                                 </p>
                             </div>
                         </div>
@@ -198,27 +198,27 @@ get_header(); ?>
         <section class="py-20">
             <div class="container">
                 <div class="text-center mb-16">
-                    <h2 class="text-headline mb-6">By the Numbers</h2>
+                    <h2 class="text-headline mb-6"><?php esc_html_e('By the Numbers', 'cassette-brutal'); ?></h2>
                     <p class="text-body text-muted-foreground max-w-2xl mx-auto">
-                        Showcase your achievements and key metrics with this clean stats section.
+                        <?php esc_html_e('Showcase your achievements and key metrics with this clean stats section.', 'cassette-brutal'); ?>
                     </p>
                 </div>
                 <div class="grid grid-cols-4 gap-8">
                     <div class="text-center">
                         <div class="text-hero font-bold text-accent mb-2">99%</div>
-                        <div class="text-body text-muted-foreground">Customer Satisfaction</div>
+                        <div class="text-body text-muted-foreground"><?php esc_html_e('Customer Satisfaction', 'cassette-brutal'); ?></div>
                     </div>
                     <div class="text-center">
                         <div class="text-hero font-bold text-accent mb-2">10k+</div>
-                        <div class="text-body text-muted-foreground">Active Users</div>
+                        <div class="text-body text-muted-foreground"><?php esc_html_e('Active Users', 'cassette-brutal'); ?></div>
                     </div>
                     <div class="text-center">
                         <div class="text-hero font-bold text-accent mb-2">24/7</div>
-                        <div class="text-body text-muted-foreground">Support Available</div>
+                        <div class="text-body text-muted-foreground"><?php esc_html_e('Support Available', 'cassette-brutal'); ?></div>
                     </div>
                     <div class="text-center">
                         <div class="text-hero font-bold text-accent mb-2">5★</div>
-                        <div class="text-body text-muted-foreground">Average Rating</div>
+                        <div class="text-body text-muted-foreground"><?php esc_html_e('Average Rating', 'cassette-brutal'); ?></div>
                     </div>
                 </div>
             </div>
@@ -229,8 +229,8 @@ get_header(); ?>
             <div class="container">
                 <div class="max-w-4xl mx-auto text-center">
                     <blockquote class="text-headline italic mb-8 text-foreground">
-                        "This design system has transformed how we approach our digital products. 
-                        The attention to detail and thoughtful interactions make all the difference."
+                        <?php esc_html_e('"This design system has transformed how we approach our digital products.', 'cassette-brutal'); ?>
+                        <?php esc_html_e('The attention to detail and thoughtful interactions make all the difference."', 'cassette-brutal'); ?>
                     </blockquote>
                     <div class="flex items-center justify-center gap-4">
                         <div class="h-12 w-12 bg-accent rounded-full"></div>
@@ -248,13 +248,13 @@ get_header(); ?>
             <div class="container">
                 <div class="card card-elevated text-center py-16">
                     <div class="max-w-2xl mx-auto space-y-6">
-                        <h2 class="text-headline">Ready to Get Started?</h2>
+                        <h2 class="text-headline"><?php esc_html_e('Ready to Get Started?', 'cassette-brutal'); ?></h2>
                         <p class="text-body text-muted-foreground">
-                            Join thousands of creators who are already using our design system to build beautiful, functional products.
+                            <?php esc_html_e('Join thousands of creators who are already using our design system to build beautiful, functional products.', 'cassette-brutal'); ?>
                         </p>
                         <div class="flex gap-4 justify-center">
-                            <a href="#" class="btn btn-primary btn-lg">Start Free Trial</a>
-                            <a href="#" class="btn btn-brutal btn-lg">View Pricing</a>
+                            <a href="#" class="btn btn-primary btn-lg"><?php esc_html_e('Start Free Trial', 'cassette-brutal'); ?></a>
+                            <a href="#" class="btn btn-brutal btn-lg"><?php esc_html_e('View Pricing', 'cassette-brutal'); ?></a>
                         </div>
                     </div>
                 </div>
@@ -265,9 +265,9 @@ get_header(); ?>
         <section class="py-24 bg-surface-elevated">
             <div class="container">
                 <div class="text-center mb-20">
-                    <h2 class="text-headline mb-6">Design Principles</h2>
+                    <h2 class="text-headline mb-6"><?php esc_html_e('Design Principles', 'cassette-brutal'); ?></h2>
                     <p class="text-body text-muted-foreground max-w-2xl mx-auto">
-                        Our approach to design, refined through years of experience and countless iterations.
+                        <?php esc_html_e('Our approach to design, refined through years of experience and countless iterations.', 'cassette-brutal'); ?>
                     </p>
                 </div>
                 
@@ -277,15 +277,15 @@ get_header(); ?>
                         <div class="grid grid-cols-12 gap-8 items-center">
                             <div class="col-span-8">
                                 <div class="space-y-4">
-                                    <h3 class="text-headline font-semibold group-hover:text-accent transition-colors">Clarity First</h3>
+                                    <h3 class="text-headline font-semibold group-hover:text-accent transition-colors"><?php esc_html_e('Clarity First', 'cassette-brutal'); ?></h3>
                                     <p class="text-body text-muted-foreground">
-                                        Every element serves a purpose. We eliminate the unnecessary and amplify what matters, 
-                                        creating interfaces that feel intuitive from the first interaction.
+                                        <?php esc_html_e('Every element serves a purpose. We eliminate the unnecessary and amplify what matters,', 'cassette-brutal'); ?>
+                                        <?php esc_html_e('creating interfaces that feel intuitive from the first interaction.', 'cassette-brutal'); ?>
                                     </p>
                                     <div class="flex gap-2">
-                                        <span class="px-3 py-1 bg-accent/10 text-accent text-caption rounded-full">Minimalism</span>
-                                        <span class="px-3 py-1 bg-accent/10 text-accent text-caption rounded-full">Focus</span>
-                                        <span class="px-3 py-1 bg-accent/10 text-accent text-caption rounded-full">Purpose</span>
+                                        <span class="px-3 py-1 bg-accent/10 text-accent text-caption rounded-full"><?php esc_html_e('Minimalism', 'cassette-brutal'); ?></span>
+                                        <span class="px-3 py-1 bg-accent/10 text-accent text-caption rounded-full"><?php esc_html_e('Focus', 'cassette-brutal'); ?></span>
+                                        <span class="px-3 py-1 bg-accent/10 text-accent text-caption rounded-full"><?php esc_html_e('Purpose', 'cassette-brutal'); ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -307,15 +307,15 @@ get_header(); ?>
                             </div>
                             <div class="col-span-8">
                                 <div class="space-y-4">
-                                    <h3 class="text-headline font-semibold group-hover:text-accent transition-colors">Bold Decisions</h3>
+                                    <h3 class="text-headline font-semibold group-hover:text-accent transition-colors"><?php esc_html_e('Bold Decisions', 'cassette-brutal'); ?></h3>
                                     <p class="text-body text-muted-foreground">
-                                        We're not afraid to make strong choices. Sometimes the best design is the one that 
-                                        takes a stand and commits fully to its vision.
+                                        <?php esc_html_e("We're not afraid to make strong choices. Sometimes the best design is the one that", 'cassette-brutal'); ?>
+                                        <?php esc_html_e('takes a stand and commits fully to its vision.', 'cassette-brutal'); ?>
                                     </p>
                                     <div class="flex gap-2">
-                                        <span class="px-3 py-1 bg-primary/10 text-primary text-caption rounded-full">Confidence</span>
-                                        <span class="px-3 py-1 bg-primary/10 text-primary text-caption rounded-full">Impact</span>
-                                        <span class="px-3 py-1 bg-primary/10 text-primary text-caption rounded-full">Vision</span>
+                                        <span class="px-3 py-1 bg-primary/10 text-primary text-caption rounded-full"><?php esc_html_e('Confidence', 'cassette-brutal'); ?></span>
+                                        <span class="px-3 py-1 bg-primary/10 text-primary text-caption rounded-full"><?php esc_html_e('Impact', 'cassette-brutal'); ?></span>
+                                        <span class="px-3 py-1 bg-primary/10 text-primary text-caption rounded-full"><?php esc_html_e('Vision', 'cassette-brutal'); ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -327,15 +327,15 @@ get_header(); ?>
                         <div class="grid grid-cols-12 gap-8 items-center">
                             <div class="col-span-8">
                                 <div class="space-y-4">
-                                    <h3 class="text-headline font-semibold group-hover:text-accent transition-colors">Human Connection</h3>
+                                    <h3 class="text-headline font-semibold group-hover:text-accent transition-colors"><?php esc_html_e('Human Connection', 'cassette-brutal'); ?></h3>
                                     <p class="text-body text-muted-foreground">
-                                        Technology should feel human. We design with empathy, considering not just what users need to do, 
-                                        but how they feel while doing it.
+                                        <?php esc_html_e('Technology should feel human. We design with empathy, considering not just what users need to do,', 'cassette-brutal'); ?>
+                                        <?php esc_html_e('but how they feel while doing it.', 'cassette-brutal'); ?>
                                     </p>
                                     <div class="flex gap-2">
-                                        <span class="px-3 py-1 bg-muted text-foreground text-caption rounded-full">Empathy</span>
-                                        <span class="px-3 py-1 bg-muted text-foreground text-caption rounded-full">Emotion</span>
-                                        <span class="px-3 py-1 bg-muted text-foreground text-caption rounded-full">Care</span>
+                                        <span class="px-3 py-1 bg-muted text-foreground text-caption rounded-full"><?php esc_html_e('Empathy', 'cassette-brutal'); ?></span>
+                                        <span class="px-3 py-1 bg-muted text-foreground text-caption rounded-full"><?php esc_html_e('Emotion', 'cassette-brutal'); ?></span>
+                                        <span class="px-3 py-1 bg-muted text-foreground text-caption rounded-full"><?php esc_html_e('Care', 'cassette-brutal'); ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -395,7 +395,7 @@ get_header(); ?>
                                                 <?php echo get_the_excerpt(); ?>
                                             </div>
                                             
-                                            <a href="<?php echo get_permalink(); ?>" class="btn btn-primary">Read More</a>
+                                            <a href="<?php echo get_permalink(); ?>" class="btn btn-primary"><?php esc_html_e('Read More', 'cassette-brutal'); ?></a>
                                         </div>
                                     </article>
                                 <?php endwhile; ?>
