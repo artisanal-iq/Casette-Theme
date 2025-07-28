@@ -435,6 +435,17 @@ function cassette_brutal_post_navigation() {
 }
 
 /**
+ * Get the markup for a pattern file.
+ *
+ * @param string $slug Pattern slug.
+ * @return string Pattern markup.
+ */
+function cassette_brutal_get_pattern( $slug ) {
+    $file = get_template_directory() . '/patterns/' . $slug . '.php';
+    return file_exists( $file ) ? file_get_contents( $file ) : '';
+}
+
+/**
  * Register block patterns for reusable collections.
  */
 function cassette_brutal_register_patterns() {
@@ -450,7 +461,7 @@ function cassette_brutal_register_patterns() {
         array(
             'title'      => esc_html__( 'Hero Section', 'cassette-brutal' ),
             'categories' => array( 'cassette-collections' ),
-            'content'    => file_get_contents( get_template_directory() . '/patterns/hero.php' ),
+            'content'    => cassette_brutal_get_pattern( 'hero' ),
         )
     );
 
@@ -459,7 +470,7 @@ function cassette_brutal_register_patterns() {
         array(
             'title'      => esc_html__( 'Good / Better / Best', 'cassette-brutal' ),
             'categories' => array( 'cassette-collections' ),
-            'content'    => file_get_contents( get_template_directory() . '/patterns/good-better-best.php' ),
+            'content'    => cassette_brutal_get_pattern( 'good-better-best' ),
         )
     );
 
@@ -468,7 +479,7 @@ function cassette_brutal_register_patterns() {
         array(
             'title'      => esc_html__( 'CTA Card', 'cassette-brutal' ),
             'categories' => array( 'cassette-collections' ),
-            'content'    => file_get_contents( get_template_directory() . '/patterns/cta-card.php' ),
+            'content'    => cassette_brutal_get_pattern( 'cta-card' ),
         )
     );
 
@@ -477,7 +488,7 @@ function cassette_brutal_register_patterns() {
         array(
             'title'      => esc_html__( 'CTA Dark', 'cassette-brutal' ),
             'categories' => array( 'cassette-collections' ),
-            'content'    => file_get_contents( get_template_directory() . '/patterns/cta-dark.php' ),
+            'content'    => cassette_brutal_get_pattern( 'cta-dark' ),
         )
     );
 
@@ -486,7 +497,7 @@ function cassette_brutal_register_patterns() {
         array(
             'title'      => esc_html__( 'CTA Minimal', 'cassette-brutal' ),
             'categories' => array( 'cassette-collections' ),
-            'content'    => file_get_contents( get_template_directory() . '/patterns/cta-minimal.php' ),
+            'content'    => cassette_brutal_get_pattern( 'cta-minimal' ),
         )
     );
 
@@ -495,7 +506,7 @@ function cassette_brutal_register_patterns() {
         array(
             'title'      => esc_html__( 'Related Posts', 'cassette-brutal' ),
             'categories' => array( 'cassette-collections' ),
-            'content'    => file_get_contents( get_template_directory() . '/patterns/related-posts.php' ),
+            'content'    => cassette_brutal_get_pattern( 'related-posts' ),
         )
     );
 
@@ -504,10 +515,42 @@ function cassette_brutal_register_patterns() {
         array(
             'title'      => esc_html__( 'Post Card', 'cassette-brutal' ),
             'categories' => array( 'cassette-collections' ),
-            'content'    => file_get_contents( get_template_directory() . '/patterns/post-card.php' ),
+            'content'    => cassette_brutal_get_pattern( 'post-card' ),
         )
     );
 }
 add_action( 'init', 'cassette_brutal_register_patterns' );
+
+/**
+ * Register ACF blocks using existing patterns as markup.
+ */
+function cassette_brutal_register_acf_blocks() {
+    if ( ! function_exists( 'acf_register_block_type' ) ) {
+        return;
+    }
+
+    $patterns = array(
+        'hero-section'      => __( 'Hero Section', 'cassette-brutal' ),
+        'good-better-best'  => __( 'Good / Better / Best', 'cassette-brutal' ),
+        'cta-card'          => __( 'CTA Card', 'cassette-brutal' ),
+        'cta-dark'          => __( 'CTA Dark', 'cassette-brutal' ),
+        'cta-minimal'       => __( 'CTA Minimal', 'cassette-brutal' ),
+        'related-posts'     => __( 'Related Posts', 'cassette-brutal' ),
+        'post-card'         => __( 'Post Card', 'cassette-brutal' ),
+    );
+
+    foreach ( $patterns as $slug => $title ) {
+        acf_register_block_type( array(
+            'name'            => $slug,
+            'title'           => $title,
+            'render_callback' => function() use ( $slug ) {
+                echo cassette_brutal_get_pattern( $slug );
+            },
+            'category'        => 'cassette-collections',
+            'mode'            => 'preview',
+        ) );
+    }
+}
+add_action( 'acf/init', 'cassette_brutal_register_acf_blocks' );
 ?>
 

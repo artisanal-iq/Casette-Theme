@@ -60,6 +60,7 @@
             this.setupSmoothScrolling();
             this.setupAnimations();
             this.setupInteractiveElements();
+            this.setupResourceFiltering();
             this.setupAccessibility();
             this.setupPerformanceOptimizations();
         },
@@ -312,9 +313,31 @@
                         this.style.boxShadow = 'var(--shadow-lg)';
                     }
                 });
-                
+
                 card.addEventListener('mouseleave', function() {
                     this.style.boxShadow = '';
+                });
+            });
+        },
+
+        // Resources page filtering
+        setupResourceFiltering: function() {
+            const buttons = document.querySelectorAll('#resources-cards .filter-btn');
+            const cards = document.querySelectorAll('#resources-cards .resource-card');
+
+            if (!buttons.length || !cards.length) return;
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.dataset.filter;
+                    buttons.forEach(b => b.classList.toggle('active', b === this));
+                    cards.forEach(card => {
+                        if (category === 'all' || card.dataset.category === category) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
                 });
             });
         },

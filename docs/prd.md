@@ -95,14 +95,14 @@ This project will improve maintainability, flexibility, and usability by structu
 * [x] Create `page-resources.php`
 * [x] Include: intro block, cards, dynamic posts, media embeds, CTA
 * [x] Register any needed patterns for resource sections
-* [ ] Optionally add simple JavaScript filter for media/cards
+* [x] Optionally add simple JavaScript filter for media/cards
 
 ## Sprint 5: Finishing Touches
 
-* [ ] Ensure all templates are mobile responsive
-* [ ] Polish typography and spacing scale
-* [ ] QA for editor-side appearance
-* [ ] Optimize loading/minify assets
+* [x] Ensure all templates are mobile responsive
+* [x] Polish typography and spacing scale
+* [x] QA for editor-side appearance
+* [x] Optimize loading/minify assets
 
 ---
 

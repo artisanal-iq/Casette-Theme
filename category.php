@@ -14,8 +14,10 @@ $template = 'template-parts/category/category-' . $slug;
 
 if ( locate_template( $template . '.php' ) ) {
     get_template_part( 'template-parts/category/category', $slug );
-} else {
+} elseif ( locate_template( 'template-parts/category/category-default.php' ) ) {
     get_template_part( 'template-parts/category/category', 'default' );
+} else {
+    get_template_part( 'template-parts/category/category', 'fallback' );
 }
 
 get_footer();

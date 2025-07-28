@@ -728,10 +728,46 @@ body {
         padding-bottom: 3rem;
     }
     
-    .py-20 {
+.py-20 {
         padding-top: 2.5rem;
         padding-bottom: 2.5rem;
     }
+}
+
+/* Gutenberg Block Styles */
+.wp-block-button .wp-block-button__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    border: none;
+}
+
+.wp-block-button.is-style-fill .wp-block-button__link {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link {
+    background-color: transparent;
+    color: hsl(var(--primary));
+    border: 1px solid hsl(var(--border));
+}
+
+.wp-block-separator {
+    border: none;
+    border-top: 1px solid hsl(var(--border));
+    margin: var(--space-8) 0;
+}
+
+/* Resources filter button */
+.filter-btn.active {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
 }
 
 /* Focus States for Accessibility */
