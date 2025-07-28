@@ -518,6 +518,15 @@ function cassette_brutal_register_patterns() {
             'content'    => cassette_brutal_get_pattern( 'post-card' ),
         )
     );
+
+    register_block_pattern(
+        'cassette-brutal/faq',
+        array(
+            'title'      => esc_html__( 'FAQ', 'cassette-brutal' ),
+            'categories' => array( 'cassette-collections' ),
+            'content'    => cassette_brutal_get_pattern( 'faq' ),
+        )
+    );
 }
 add_action( 'init', 'cassette_brutal_register_patterns' );
 
@@ -537,6 +546,7 @@ function cassette_brutal_register_acf_blocks() {
         'cta-minimal'       => __( 'CTA Minimal', 'cassette-brutal' ),
         'related-posts'     => __( 'Related Posts', 'cassette-brutal' ),
         'post-card'         => __( 'Post Card', 'cassette-brutal' ),
+        'faq'               => __( 'FAQ', 'cassette-brutal' ),
     );
 
     foreach ( $patterns as $slug => $title ) {
