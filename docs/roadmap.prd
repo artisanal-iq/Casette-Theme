@@ -1,0 +1,35 @@
+# Cassette Brutal Theme — Development Roadmap
+
+## Phase 1: Foundations (Week 1)
+- [x] Initialize theme folder and functions.php
+- [x] Register theme support options
+- [x] Define global CSS variables in style.css
+- [x] Set up editor styles and enqueue assets
+- [x] Register block pattern category
+
+## Phase 2: Core Templates & Parts (Week 2)
+- [ ] Build `/template-parts/` directory
+- [ ] Create `header.php`, `footer.php`, `header-single.php`
+- [ ] Create `post-card.php`, `pagination.php`, `sidebar.php`
+- [ ] Build `single.php`, `page.php`, `404.php`, `index.php`
+- [ ] Implement helper functions (grid, container, etc.)
+
+## Phase 3: Patterns and Dynamic Sections (Week 3)
+- [ ] Register Hero pattern
+- [ ] Build and register Good / Better / Best block pattern
+- [ ] Build reusable CTA patterns (3–4 variants)
+- [ ] Register Related Posts pattern
+- [ ] Register post-card and GBB as editor-accessible patterns
+
+## Phase 4: Custom Template Expansion (Week 4)
+- [ ] Create `category.php` with conditional routing
+- [ ] Build `/template-parts/category/category-resources.php`
+- [ ] Create `page-resources.php` with modular includes
+- [ ] Create `page-landing.php` template
+
+## Phase 5: Polishing & Optional Enhancements (Future)
+- [ ] Add JavaScript filtering to Resources page
+- [ ] Prepare patterns for ACF integration
+- [ ] Register fallback templates for unhandled categories
+- [ ] Add Gutenberg block styles to `style.css` for front-end match
+- [ ] Write documentation for contributors
