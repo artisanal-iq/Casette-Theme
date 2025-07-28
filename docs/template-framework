@@ -1,0 +1,57 @@
+# Sprint 1: Template Framework + Core Parts
+
+## Epic: Theme Scaffolding and Layout Infrastructure
+
+---
+
+### Story 1: Set up Template Part Directory
+**Goal**: Enable modular templating through reusable PHP includes
+**Tasks**:
+- Create `/template-parts/` directory
+- Scaffold `header.php`, `footer.php`, `post-card.php`, `pagination.php`, `sidebar.php`
+- Create alternate `header-single.php`
+
+**Acceptance Criteria**:
+- Each file exists and contains valid markup
+- Templates load without fatal errors
+- Can be imported via `get_template_part()`
+
+---
+
+### Story 2: Build `index.php` and Conditional Front Page Logic
+**Goal**: Set up the homepage and blog archive logic
+**Tasks**:
+- Use `is_front_page()` to load custom sections
+- Include `hero.php`, `good-better-best.php`, and post grid
+- Add fallback for archive listing with pagination
+
+**Acceptance Criteria**:
+- Homepage displays hero and GBB
+- Archives show post cards
+- Pagination works
+
+---
+
+### Story 3: Create `single.php` and `page.php` Templates
+**Goal**: Build detailed templates for posts and pages
+**Tasks**:
+- Structure content areas with `cassette_brutal_container()` helper
+- Load correct header variant on single posts
+- Add featured image, tags, author box, and sidebar logic
+
+**Acceptance Criteria**:
+- Posts display content cleanly
+- Pages optionally display sidebar
+- No duplication between layouts
+
+---
+
+### Story 4: Implement Editor and Frontend Style Parity
+**Goal**: Ensure consistent styling between editor and frontend
+**Tasks**:
+- Update `editor-style.css` to match block spacing, headings, and layout rules
+- Ensure editor preview reflects global styles
+
+**Acceptance Criteria**:
+- Headings, images, block buttons look identical in both views
+- Padding and margin variables behave consistently
