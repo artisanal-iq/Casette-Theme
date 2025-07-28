@@ -8,9 +8,9 @@
 - [x] Register block pattern category
 
 ## Phase 2: Core Templates & Parts (Week 2)
-- [ ] Build `/template-parts/` directory
-- [ ] Create `header.php`, `footer.php`, `header-single.php`
-- [ ] Create `post-card.php`, `pagination.php`, `sidebar.php`
+- [x] Build `/template-parts/` directory
+- [x] Create `header.php`, `footer.php`, `header-single.php`
+- [x] Create `post-card.php`, `pagination.php`, `sidebar.php`
 - [ ] Build `single.php`, `page.php`, `404.php`, `index.php`
 - [ ] Implement helper functions (grid, container, etc.)
 
