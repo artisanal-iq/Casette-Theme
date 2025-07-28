@@ -25,11 +25,11 @@
 - [x] Create `category.php` with conditional routing
 - [x] Build `/template-parts/category/category-resources.php`
 - [x] Create `page-resources.php` with modular includes
-- [ ] Create `page-landing.php` template
+- [x] Create `page-landing.php` template
 
 ## Phase 5: Polishing & Optional Enhancements (Future)
-- [ ] Add JavaScript filtering to Resources page
-- [ ] Prepare patterns for ACF integration
-- [ ] Register fallback templates for unhandled categories
-- [ ] Add Gutenberg block styles to `style.css` for front-end match
-- [ ] Write documentation for contributors
+- [x] Add JavaScript filtering to Resources page
+- [x] Prepare patterns for ACF integration
+- [x] Register fallback templates for unhandled categories
+- [x] Add Gutenberg block styles to `style.css` for front-end match
+- [x] Write documentation for contributors
