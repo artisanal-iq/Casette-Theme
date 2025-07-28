@@ -58,6 +58,7 @@
             this.setupThemeToggle();
             this.setupBackToTop();
             this.setupSmoothScrolling();
+            this.setupTableOfContents();
             this.setupAnimations();
             this.setupInteractiveElements();
             this.setupResourceFiltering();
@@ -240,6 +241,63 @@
                         utils.scrollToElement(target, 80);
                     }
                 });
+            });
+        },
+
+        // Generate Table of Contents from headings
+        setupTableOfContents: function() {
+            const toc = document.querySelector('.table-of-contents');
+            if (!toc) return;
+
+            const levels = toc.dataset.levels || 'h2';
+            const selectors = levels.split(',').map(l => l.trim()).join(',');
+            const headings = document.querySelectorAll('.entry-content ' + selectors);
+
+            if (!headings.length) {
+                toc.style.display = 'none';
+                return;
+            }
+
+            const list = toc.querySelector('.toc-list');
+            if (!list) return;
+
+            const mainLevel = levels.split(',')[0].toUpperCase();
+            let currentLi = null;
+
+            headings.forEach(heading => {
+                if (!heading.id) {
+                    heading.id = heading.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-');
+                }
+
+                const li = document.createElement('li');
+                const link = document.createElement('a');
+                link.textContent = heading.textContent;
+                link.href = '#' + heading.id;
+                li.appendChild(link);
+
+                if (heading.tagName === mainLevel) {
+                    list.appendChild(li);
+                    currentLi = li;
+                } else if (currentLi) {
+                    let sub = currentLi.querySelector('ul');
+                    if (!sub) {
+                        sub = document.createElement('ul');
+                        sub.className = 'toc-sublist hidden';
+                        const toggle = document.createElement('button');
+                        toggle.className = 'toc-accordion-toggle';
+                        toggle.setAttribute('aria-expanded', 'false');
+                        toggle.innerHTML = '\u25B6';
+                        currentLi.insertBefore(toggle, currentLi.firstChild);
+                        toggle.addEventListener('click', function() {
+                            const expanded = this.getAttribute('aria-expanded') === 'true';
+                            this.setAttribute('aria-expanded', !expanded);
+                            sub.classList.toggle('hidden');
+                            this.innerHTML = expanded ? '\u25B6' : '\u25BC';
+                        });
+                        currentLi.appendChild(sub);
+                    }
+                    sub.appendChild(li);
+                }
             });
         },
         
