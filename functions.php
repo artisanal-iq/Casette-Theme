@@ -453,6 +453,60 @@ function cassette_brutal_register_patterns() {
             'content'    => file_get_contents( get_template_directory() . '/patterns/hero.php' ),
         )
     );
+
+    register_block_pattern(
+        'cassette-brutal/good-better-best',
+        array(
+            'title'      => esc_html__( 'Good / Better / Best', 'cassette-brutal' ),
+            'categories' => array( 'cassette-collections' ),
+            'content'    => file_get_contents( get_template_directory() . '/patterns/good-better-best.php' ),
+        )
+    );
+
+    register_block_pattern(
+        'cassette-brutal/cta-card',
+        array(
+            'title'      => esc_html__( 'CTA Card', 'cassette-brutal' ),
+            'categories' => array( 'cassette-collections' ),
+            'content'    => file_get_contents( get_template_directory() . '/patterns/cta-card.php' ),
+        )
+    );
+
+    register_block_pattern(
+        'cassette-brutal/cta-dark',
+        array(
+            'title'      => esc_html__( 'CTA Dark', 'cassette-brutal' ),
+            'categories' => array( 'cassette-collections' ),
+            'content'    => file_get_contents( get_template_directory() . '/patterns/cta-dark.php' ),
+        )
+    );
+
+    register_block_pattern(
+        'cassette-brutal/cta-minimal',
+        array(
+            'title'      => esc_html__( 'CTA Minimal', 'cassette-brutal' ),
+            'categories' => array( 'cassette-collections' ),
+            'content'    => file_get_contents( get_template_directory() . '/patterns/cta-minimal.php' ),
+        )
+    );
+
+    register_block_pattern(
+        'cassette-brutal/related-posts',
+        array(
+            'title'      => esc_html__( 'Related Posts', 'cassette-brutal' ),
+            'categories' => array( 'cassette-collections' ),
+            'content'    => file_get_contents( get_template_directory() . '/patterns/related-posts.php' ),
+        )
+    );
+
+    register_block_pattern(
+        'cassette-brutal/post-card',
+        array(
+            'title'      => esc_html__( 'Post Card', 'cassette-brutal' ),
+            'categories' => array( 'cassette-collections' ),
+            'content'    => file_get_contents( get_template_directory() . '/patterns/post-card.php' ),
+        )
+    );
 }
 add_action( 'init', 'cassette_brutal_register_patterns' );
 ?>

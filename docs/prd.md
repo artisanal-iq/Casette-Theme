@@ -78,10 +78,10 @@ This project will improve maintainability, flexibility, and usability by structu
 
 ## Sprint 2: Block Patterns
 
-* [ ] Create block pattern registration system in `functions.php`
-* [ ] Convert `good-better-best.php` into reusable block pattern
-* [ ] Register 3 black CTA patterns (pattern + PHP partial)
-* [ ] Register Related Posts Grid pattern
+* [x] Create block pattern registration system in `functions.php`
+* [x] Convert `good-better-best.php` into reusable block pattern
+* [x] Register 3 black CTA patterns (pattern + PHP partial)
+* [x] Register Related Posts Grid pattern
 
 ## Sprint 3: Category and Archive
 
@@ -94,7 +94,7 @@ This project will improve maintainability, flexibility, and usability by structu
 
 * [x] Create `page-resources.php`
 * [x] Include: intro block, cards, dynamic posts, media embeds, CTA
-* [ ] Register any needed patterns for resource sections
+* [x] Register any needed patterns for resource sections
 * [ ] Optionally add simple JavaScript filter for media/cards
 
 ## Sprint 5: Finishing Touches

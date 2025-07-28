@@ -15,11 +15,11 @@
 - [x] Implement helper functions (grid, container, etc.)
 
 ## Phase 3: Patterns and Dynamic Sections (Week 3)
-- [ ] Register Hero pattern
-- [ ] Build and register Good / Better / Best block pattern
-- [ ] Build reusable CTA patterns (3–4 variants)
-- [ ] Register Related Posts pattern
-- [ ] Register post-card and GBB as editor-accessible patterns
+- [x] Register Hero pattern
+- [x] Build and register Good / Better / Best block pattern
+- [x] Build reusable CTA patterns (3–4 variants)
+- [x] Register Related Posts pattern
+- [x] Register post-card and GBB as editor-accessible patterns
 
 ## Phase 4: Custom Template Expansion (Week 4)
 - [x] Create `category.php` with conditional routing
