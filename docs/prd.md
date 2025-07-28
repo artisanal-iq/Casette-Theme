@@ -40,6 +40,7 @@ This project will improve maintainability, flexibility, and usability by structu
 * 3–4 Black CTA blocks
 * Related Posts Grid
 * Hero Section (existing)
+* Table of Contents with dynamic headings
 
 ### Style System
 
