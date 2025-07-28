@@ -46,6 +46,7 @@ A modern WordPress theme inspired by Cassette Modernism and Pixelated Brutalism 
 - WordPress 5.0 or higher
 - PHP 7.4 or higher
 - Modern browser with CSS Grid support
+- Table of Contents block pattern for posts
 
 ## File Structure
 
