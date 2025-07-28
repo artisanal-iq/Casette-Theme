@@ -71,10 +71,10 @@ This project will improve maintainability, flexibility, and usability by structu
 
 ## Sprint 1: Template Part Integration
 
-* [ ] Migrate existing inline sections into `get_template_part()` calls
-* [ ] Refactor `index.php`, `single.php`, and `page.php` to use partials
-* [ ] Create `header-single.php` and wire into `single.php`
-* [ ] Implement `post-card.php` for archive and related posts
+* [x] Migrate existing inline sections into `get_template_part()` calls
+* [x] Refactor `index.php`, `single.php`, and `page.php` to use partials
+* [x] Create `header-single.php` and wire into `single.php`
+* [x] Implement `post-card.php` for archive and related posts
 
 ## Sprint 2: Block Patterns
 
@@ -85,15 +85,15 @@ This project will improve maintainability, flexibility, and usability by structu
 
 ## Sprint 3: Category and Archive
 
-* [ ] Build `category.php` router using `get_query_var('category_name')`
-* [ ] Create `category-default.php` and `category-resources.php`
-* [ ] Add custom layout logic in each
-* [ ] Add fallback logic if no slug-specific template exists
+* [x] Build `category.php` router using `get_query_var('category_name')`
+* [x] Create `category-default.php` and `category-resources.php`
+* [x] Add custom layout logic in each
+* [x] Add fallback logic if no slug-specific template exists
 
 ## Sprint 4: Resources Page Template
 
-* [ ] Create `page-resources.php`
-* [ ] Include: intro block, cards, dynamic posts, media embeds, CTA
+* [x] Create `page-resources.php`
+* [x] Include: intro block, cards, dynamic posts, media embeds, CTA
 * [ ] Register any needed patterns for resource sections
 * [ ] Optionally add simple JavaScript filter for media/cards
 
