@@ -65,9 +65,9 @@ This project will improve maintainability, flexibility, and usability by structu
 
 ## Sprint 0: Setup and Scaffolding
 
-* [ ] Create `/template-parts/` directory and subfolders
-* [ ] Create blank PHP partials for headers, footer, post cards, pagination, etc.
-* [ ] Create `/resources/` and `/template-parts/category/` folders
+* [x] Create `/template-parts/` directory and subfolders
+* [x] Create blank PHP partials for headers, footer, post cards, pagination, etc.
+* [x] Create `/resources/` and `/template-parts/category/` folders
 
 ## Sprint 1: Template Part Integration
 
