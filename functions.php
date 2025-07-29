@@ -520,6 +520,11 @@ function cassette_brutal_register_patterns() {
     );
 
     register_block_pattern(
+        'cassette-brutal/faq',
+        array(
+            'title'      => esc_html__( 'FAQ', 'cassette-brutal' ),
+            'categories' => array( 'cassette-collections' ),
+            'content'    => cassette_brutal_get_pattern( 'faq' ),
         'cassette-brutal/table-of-contents',
         array(
             'title'      => esc_html__( 'Table of Contents', 'cassette-brutal' ),
@@ -546,6 +551,7 @@ function cassette_brutal_register_acf_blocks() {
         'cta-minimal'       => __( 'CTA Minimal', 'cassette-brutal' ),
         'related-posts'     => __( 'Related Posts', 'cassette-brutal' ),
         'post-card'         => __( 'Post Card', 'cassette-brutal' ),
+        'faq'               => __( 'FAQ', 'cassette-brutal' ),
         'table-of-contents' => __( 'Table of Contents', 'cassette-brutal' ),
     );
 
