@@ -525,6 +525,10 @@ function cassette_brutal_register_patterns() {
             'title'      => esc_html__( 'FAQ', 'cassette-brutal' ),
             'categories' => array( 'cassette-collections' ),
             'content'    => cassette_brutal_get_pattern( 'faq' ),
+        )
+    );
+
+    register_block_pattern(
         'cassette-brutal/table-of-contents',
         array(
             'title'      => esc_html__( 'Table of Contents', 'cassette-brutal' ),
